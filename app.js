@@ -30,28 +30,30 @@ function displayUsers(userData) {
 	let userHTML = ``;
 	users.forEach((user, i) => {
 		userHTML += `
-     <div class="card-user">
-     <span id="${i}" class="more-btn material-symbols-outlined">more_horiz</span>
-      <div class="important-information">
-        <img src="${user.picture.large}" alt="${user.name.first} ${user.name.last}" class="card-image" />
-        <p class="card-name">${user.name.first} ${user.name.last}</p><br>
-        <p class="card-address">${user.location.city},${user.location.country}</p>
-      </div>
-      <div id="${i}" class="more-information">
-      <br>
-      <address>
-        <p><span class="infoicon material-symbols-outlined">
-        home
-        </span> ${user.location.street.name}, ${user.location.street.number},</p>
-        <p>${user.location.postcode} ${user.location.city}, ${user.location.state}, ${user.location.country}</p>
-        <p><span class="infoicon material-symbols-outlined">
-        mail
-        </span> ${user.email}</p>
-        <p><span class="infoicon material-symbols-outlined">
-        call
-        </span> ${user.phone}</p>
-      </div>
-       </div>
+		<div class="card-user">
+		<span id="${i}" class="more-btn material-symbols-outlined">more_horiz</span>
+		<div class="important-information">
+		  <img src="${user.picture.large}" alt="${user.name.first} ${user.name.last}" class="card-image" />
+		  <p class="card-name">${user.name.first} ${user.name.last}</p>
+		  <br>
+		  <p class="card-address">${user.location.city},${user.location.country}</p>
+		</div>
+		<div id="${i}" class="more-information">
+		  <br>
+		  <address>
+			<p>
+			  <span class="infoicon material-symbols-outlined"> home </span> ${user.location.street.name}, ${user.location.street.number},
+			</p>
+			<p>${user.location.postcode} ${user.location.city}, ${user.location.state}, ${user.location.country}</p>
+			<p>
+			  <span class="infoicon material-symbols-outlined"> mail </span> ${user.email}
+			</p>
+			<p>
+			  <span class="infoicon material-symbols-outlined"> call </span> ${user.phone}
+			</p>
+		  </address>
+		</div>
+	  </div>
      `;
 	});
 	userslist.innerHTML = userHTML;
